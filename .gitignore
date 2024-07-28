@@ -24,3 +24,4 @@ images/*
 
 .push.py
 home/__pycache__/*
+loanapp/__pycache__/*
