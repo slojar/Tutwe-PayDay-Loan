@@ -23,3 +23,4 @@ logs/
 images/*
 
 .push.py
+home/__pycache__/*
