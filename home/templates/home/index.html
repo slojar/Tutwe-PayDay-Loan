@@ -1,0 +1,436 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block body %}
+<!-- Start Middle -->
+<div id="middle">
+<div class="middle_inner">
+<div class="content_wrap fullwidth">
+
+<!-- Start Content -->
+<div class="middle_content entry"></div></div><div id="cmsmasters_row_75haeeaew" class="cmsmasters_row cmsmasters_color_scheme_fourth cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_boxed">
+<div class="cmsmasters_row_outer_parent">
+<div class="cmsmasters_row_outer">
+<div class="cmsmasters_row_inner">
+<div class="cmsmasters_row_margin">
+<div id="cmsmasters_column_69fyq472ta" class="cmsmasters_column one_half">
+<div class="cmsmasters_column_inner"><div id="cmsmasters_fb_8qfvd7uw2" class="cmsmasters_featured_block">
+<div class="featured_block_inner">
+<div class="featured_block_text">
+<div><div id="cmsmasters_heading_vfaj24f3a" class="cmsmasters_heading_wrap cmsmasters_heading_align_left">
+	<h2 class="cmsmasters_heading">PayDay loan made easy</h2>
+</div><span class="custom_home_calc_subtitle">We&#8217;ve simplified the process. Apply for our payday loan in minutes, without painful paperwork or waiting in queues.</span></div>
+
+</div>
+</div>
+</div>
+<div id="cmsmasters_button_t3q95a124l" class="button_wrap"><a href="{% url 'home:how-it-works' %}" class="cmsmasters_button"><span>How it works?</span></a></div>
+</div></div>
+<div id="cmsmasters_column_88qtp7iach" class="cmsmasters_column one_half custom_calculated_fields">
+<div class="cmsmasters_column_inner"><div id="cmsmasters_fb_dqz55f263h" class="cmsmasters_featured_block custom_calculated_field">
+<div class="featured_block_inner">
+<div class="featured_block_text">
+<div><div id="cmsmasters_heading_gkdgp3mjgr" class="cmsmasters_heading_wrap cmsmasters_heading_align_center">
+	<h2 class="cmsmasters_heading">How much do you need?</h2>
+</div>	<!--noptimize--><script type="text/javascript">
+	 function doValidate_1(form)
+	 {
+		if(typeof cpcff_validation_rules == 'undefined') cpcff_validation_rules = {};
+		if(typeof cpcff_validation_rules['_1'] == 'undefined') cpcff_validation_rules['_1'] = {};
+		var $dexQuery = jQuery.noConflict(),
+			cpefb_error = $dexQuery("#cp_calculatedfieldsf_pform_1").find(".cpefb_error:visible").length,
+			validation_rules = cpcff_validation_rules['_1'],
+			processing_form = function()
+			{
+				for(var rule in validation_rules)
+				{
+					if(!validation_rules[rule]) return;
+				}
+				$dexQuery("#cp_calculatedfieldsf_pform_1").find("[name$='_date']:disabled").each(function(){
+					var v  	 = $dexQuery(this).val(),
+						name = $dexQuery(this).attr( 'name' ).replace('_date', ''),
+						e 	 = $dexQuery("[name='"+name+"']"); if( e.length ){ e.val( $dexQuery.trim( e.val().replace( v, '' ) ) ); }
+				});
+				$dexQuery("#cp_calculatedfieldsf_pform_1").find("select").children().each(function(){
+					if( typeof $dexQuery(this).attr("vt") != 'undefined' )
+						$dexQuery(this).val($dexQuery(this).attr("vt"));
+				});
+				$dexQuery("#cp_calculatedfieldsf_pform_1").find("input:checkbox,input:radio").each(function(){
+					if( typeof $dexQuery(this).attr("vt") != 'undefined' )
+						$dexQuery(this).val($dexQuery(this).attr("vt"));
+				});
+				$dexQuery("#cp_calculatedfieldsf_pform_1").find( '.cpcff-recordset' ).remove();
+				$dexQuery("#cp_calculatedfieldsf_pform_1").find( '.ignore' ).closest( '.fields' ).remove();
+				$dexQuery("#form_structure_1").remove();
+				$dexQuery("#cp_calculatedfieldsf_pform_1")[ 0 ].submit();
+			};
+		document.cp_calculatedfieldsf_pform_1.cp_ref_page.value = document.location.href;
+		if (cpefb_error==0)
+		{
+					processing_form();
+		}
+		return false;
+	}
+	</script><!--/noptimize-->
+	<form name="cp_calculatedfieldsf_pform_1" id="cp_calculatedfieldsf_pform_1" action="/loan-request" method="post" enctype="multipart/form-data" onsubmit="return doValidate_1(this);" >
+        {% csrf_token %}
+			<input type="hidden" name="cp_calculatedfieldsf_pform_psequence" value="_1" />
+        <input type="hidden" name="cp_calculatedfieldsf_pform_process" value="1" />
+        <input type="hidden" name="cp_calculatedfieldsf_id" value="1" />
+        <input type="hidden" name="cp_ref_page" value="https://cash-bay.cmsmasters.net" />
+        <pre style="display:none;">
+            <!--noptimize-->
+            <script>form_structure_1=[[{"form_identifier":"","name":"fieldname8","shortlabel":"","index":0,"ftype":"fdiv",
+                "userhelp":"","userhelpTooltip":false,"csslayout":"","fields":["fieldname2"],"columns":"1",
+                "title":"div","collapsed":false,"fBuild":{},"parent":""},
+                {#{"form_identifier":"","name":"fieldname3",#}
+                {#"shortlabel":"","index":1,"ftype":"fnumber","userhelp":"","userhelpTooltip":false,"csslayout":"",#}
+                {#"title":"How long for?","predefined":"1","predefinedClick":false,"required":false,"size":"large",#}
+                {#"thousandSeparator":"","decimalSymbol":".","min":"1","max":"30","formatDynamically":false,#}
+                {#"dformat":"digits","formats":["digits","number"],"fBuild":{},"parent":"fieldname8"},#}
+                {"form_identifier":"","name":"fieldname4","shortlabel":"","index":2,"ftype":"fCalculated","userhelp":"",
+                    "userhelpTooltip":false,"csslayout":"","title":"Total Repayment","predefined":"","required":false,
+                    "size":"large","toolbar":"default|mathematical","eq":"(fieldname2)*0.25 + fieldname2","suffix":"",
+                    "prefix":"","decimalsymbol":".","groupingsymbol":"","dependencies":[{"rule":"","complex":false,
+                        "fields":[""]}],"readonly":true,"hidefield":false,"fBuild":{},"parent":""},
+                {#{"list":{"database":{"form":"1","vars":[]}},#}
+                {#    "isDataSource":true,"active":"database","form_identifier":"","name":"fieldname7","shortlabel":"",#}
+                {#    "index":3,"ftype":"femailds","userhelp":"","userhelpTooltip":false,"csslayout":"","title":"Email",#}
+                {#    "predefined":"","predefinedClick":false,"required":true,"size":"large","equalTo":"","fBuild":{},#}
+                {#    "parent":"fieldname9"},#}
+                {#{"form_identifier":"","name":"fieldname6","shortlabel":"","index":4,#}
+                {#    "ftype":"ftext","userhelp":"","userhelpTooltip":false,"csslayout":"","title":"Name","predefined":"",#}
+                {#    "predefinedClick":false,"required":false,"size":"large","minlength":"","maxlength":"","equalTo":"",#}
+                {#    "regExp":"","regExpMssg":"","fBuild":{},"parent":"fieldname9"},#}
+                {"form_identifier":"",
+                    "name":"fieldname2","shortlabel":"","index":5,"ftype":"fnumber","userhelp":"",
+                    "userhelpTooltip":false,"csslayout":"","title":"Amount","predefined":"","predefinedClick":false,
+                    "required":false,"size":"large","thousandSeparator":"","decimalSymbol":".","min":"0","max":"9999999",
+                    "formatDynamically":false,"dformat":"digits","formats":["digits","number"],"fBuild":{},
+                    "parent":"fieldname8"},
+                {"form_identifier":"","name":"fieldname9","shortlabel":"","index":6,
+                    "ftype":"fdiv","userhelp":"","userhelpTooltip":false,"csslayout":"",
+                    "fields":["fieldname6","fieldname7"],"columns":"2","title":"div","collapsed":false,"fBuild":{},
+                    "parent":""}],{"0":{"title":"","description":"","formlayout":"top_aligned",
+                    "request_cost":"fieldname2","formtemplate":"","evalequations":1,"autocomplete":1,"persistence":0,
+                    "customstyles":""},"formid":"cp_calculatedfieldsf_pform_1","setCache":false,"cache":false}];
+            </script><!--/noptimize--></pre>
+		<div id="fbuilder">
+			<div id="fbuilder_1">
+				<div id="formheader_1"></div>
+				<div id="fieldlist_1"></div>
+			</div>
+			<div id="cpcaptchalayer_1" class="cpcaptchalayer" style="display:none;">
+			            			<div class="fields" id="field-c0" style="display:none">
+				<label>Payment options</label>
+				<div class="dfield">
+				 				 <!--addons-payment-options-->
+    			 				</div>
+				<div class="clearer"></div>
+			</div>
+			<!--addons-payment-fields-->
+						<!--add-ons-->
+			</div>
+            <div id="cp_subbtn_1" class="cp_subbtn" style="display:none;">GET YOUR LOAN NOW</div>
+						<div class="clearer"></div>
+		</div>
+	<input type="hidden" id="_wpnonce" name="_wpnonce" value="96d601e37a" />
+        <input type="hidden" name="_wp_http_referer" value="/" />
+    </form>
+</div>
+
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="cmsmasters_row_niqvcsk41k" class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_boxed">
+<div class="cmsmasters_row_outer_parent">
+<div class="cmsmasters_row_outer">
+<div class="cmsmasters_row_inner">
+<div class="cmsmasters_row_margin">
+<div id="cmsmasters_column_9xcu1qmce4" class="cmsmasters_column one_first">
+<div class="cmsmasters_column_inner"><div id="cmsmasters_heading_ljn2ixuzwr" class="cmsmasters_heading_wrap cmsmasters_heading_align_center">
+	<h2 class="cmsmasters_heading">How our payday loan work</h2>
+</div><div id="cmsmasters_fb_yxawee3ly" class="cmsmasters_featured_block custom_home_subtitle">
+<div class="featured_block_inner">
+<div class="featured_block_text"><p>We&#8217;ve simplified the process. Apply for our payday loan in minutes, without painful paperwork or waiting in queues.</p>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="cmsmasters_row_v6cccynel" class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_boxed">
+<div class="cmsmasters_row_outer_parent">
+<div class="cmsmasters_row_outer">
+<div class="cmsmasters_row_inner">
+<div class="cmsmasters_row_margin">
+<div id="cmsmasters_column_phri5myp2" class="cmsmasters_column one_fourth">
+<div class="cmsmasters_column_inner"><div id="cmsmasters_icon_box_fahqs4a82e" class="cmsmasters_icon_box cmsmasters_icon_top box_icon_type_number ">
+<div class="icon_box_inner">
+<h4 class="icon_box_heading">Easy application</h4>
+<div class="icon_box_text">
+<p>Complete our online application. It’s quick, easy, and confidential</p>
+</div>
+</div>
+</div>
+</div></div>
+<div id="cmsmasters_column_kq02zjbrha" class="cmsmasters_column one_fourth">
+<div class="cmsmasters_column_inner"><div id="cmsmasters_icon_box_t9ypd7hfev" class="cmsmasters_icon_box cmsmasters_icon_top box_icon_type_number ">
+<div class="icon_box_inner">
+<h4 class="icon_box_heading">Fast decision</h4>
+<div class="icon_box_text">
+<p>You organisation/company validates and approve your request.</p>
+</div>
+</div>
+</div>
+</div></div>
+<div id="cmsmasters_column_0plfziiwr" class="cmsmasters_column one_fourth">
+<div class="cmsmasters_column_inner"><div id="cmsmasters_icon_box_k00vzgbkaq" class="cmsmasters_icon_box cmsmasters_icon_top box_icon_type_number ">
+<div class="icon_box_inner">
+<h4 class="icon_box_heading">Get Your Cash</h4>
+<div class="icon_box_text">
+<p>We deposit/disburse cash instantly.</p>
+</div>
+</div>
+</div>
+</div></div>
+<div id="cmsmasters_column_8441q7wemg" class="cmsmasters_column one_fourth">
+<div class="cmsmasters_column_inner"><div id="cmsmasters_icon_box_3u8c60kvph" class="cmsmasters_icon_box cmsmasters_icon_top box_icon_type_number ">
+<div class="icon_box_inner">
+<h4 class="icon_box_heading">Repay Your Loan</h4>
+<div class="icon_box_text">
+<p>The loan amount &amp; the interest will be debited on your next payday.</p>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="cmsmasters_row_qe6458frhy" class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_fullwidth">
+<div class="cmsmasters_row_outer_parent">
+<div class="cmsmasters_row_outer">
+<div class="cmsmasters_row_inner cmsmasters_row_fullwidth">
+<div class="cmsmasters_row_margin">
+<div id="cmsmasters_column_fwzx1j1xui" class="cmsmasters_column one_first">
+<div class="cmsmasters_column_inner"><div id="cmsmasters_divider_pxpy5986m" class="cmsmasters_divider cmsmasters_divider_width_long cmsmasters_divider_pos_center"></div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="cmsmasters_row_pp7fetvyf5" class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_fullwidth">
+<div class="cmsmasters_row_outer_parent">
+<div class="cmsmasters_row_outer">
+<div class="cmsmasters_row_inner cmsmasters_row_fullwidth cmsmasters_row_no_margin">
+<div class="cmsmasters_row_margin">
+<div id="cmsmasters_column_7eqzu0b834" class="cmsmasters_column one_fourth">
+<div class="cmsmasters_column_inner"><div id="cmsmasters_heading_81vlkza5nc" class="cmsmasters_heading_wrap cmsmasters_heading_align_left">
+	<h2 class="cmsmasters_heading">Why us</h2>
+</div>
+    <div id="cmsmasters_heading_bmv6f8ybyv" class="cmsmasters_heading_wrap cmsmasters_heading_align_left">
+	<h4 class="cmsmasters_heading">PayDay Loan</h4>
+</div>
+    <div class="cmsmasters_text">
+<p>With an online Payday Loan, you can get a little extra money before your next paycheck.</p>
+</div>
+<div id="cmsmasters_heading_gxkk1sl9i4" class="cmsmasters_heading_wrap cmsmasters_heading_align_left">
+	<h4 class="cmsmasters_heading">Easy Experience</h4>
+</div><div class="cmsmasters_text">
+<p>Simple online application and access to live support 24/7.</p>
+</div>
+</div></div>
+<div id="cmsmasters_column_yhaz3t92r" class="cmsmasters_column one_fourth">
+<div class="cmsmasters_column_inner"><div id="cmsmasters_heading_01bs12efxf" class="cmsmasters_heading_wrap cmsmasters_heading_align_left">
+	<h4 class="cmsmasters_heading">No Fees. No Catch.</h4>
+</div><div class="cmsmasters_text">
+<p>No origination fees or pre-payment penalties. What you see is what you get.</p>
+</div>
+<div id="cmsmasters_heading_0y2udrqiga" class="cmsmasters_heading_wrap cmsmasters_heading_align_left">
+	<h4 class="cmsmasters_heading">Fair Interest Rates</h4>
+</div><div class="cmsmasters_text">
+<div>Complete our online application. It’s quick, easy, and confidential</div>
+</div>
+</div></div>
+<div id="cmsmasters_column_3yueeioiwr" class="cmsmasters_column one_half">
+<div class="cmsmasters_column_inner"><div id="cmsmasters_fb_gw3stf07wd" class="cmsmasters_featured_block">
+<div class="featured_block_inner">
+<div class="featured_block_text">
+<div></div>
+
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="cmsmasters_row_4ow0auaq1" class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_fullwidth">
+<div class="cmsmasters_row_outer_parent">
+<div class="cmsmasters_row_outer">
+<div class="cmsmasters_row_inner cmsmasters_row_fullwidth">
+<div class="cmsmasters_row_margin">
+<div id="cmsmasters_column_ziqdivryor" class="cmsmasters_column one_first">
+<div class="cmsmasters_column_inner"><div id="cmsmasters_divider_d30ge0hmab" class="cmsmasters_divider cmsmasters_divider_width_long cmsmasters_divider_pos_center"></div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="cmsmasters_row_jd76nsyrwt" class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_boxed">
+<div class="cmsmasters_row_outer_parent">
+<div class="cmsmasters_row_outer">
+<div class="cmsmasters_row_inner">
+<div class="cmsmasters_row_margin">
+<div id="cmsmasters_column_c2eq155fx" class="cmsmasters_column one_first">
+<div class="cmsmasters_column_inner">
+    <div id="cmsmasters_heading_8429vng35" class="cmsmasters_heading_wrap cmsmasters_heading_align_center">
+	<h2 class="cmsmasters_heading">Still Have Some Questions Left?</h2>
+</div><div id="cmsmasters_heading_q45i73qbm" class="cmsmasters_heading_wrap cmsmasters_heading_align_center">
+	<h2 class="cmsmasters_heading">Call us for a Free Consultation at 855-456-7634</h2>
+</div><div id="cmsmasters_button_qfj2bwofi6" class="button_wrap"><a href="index.html%3Fp=11850.html" class="cmsmasters_button"><span>Contact Us</span></a></div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="cmsmasters_row_4nqvbf8jw" class="cmsmasters_row cmsmasters_color_scheme_first cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_boxed">
+<div class="cmsmasters_row_outer_parent">
+<div class="cmsmasters_row_outer">
+<div class="cmsmasters_row_inner">
+<div class="cmsmasters_row_margin">
+<div id="cmsmasters_column_5ksxz2zlp" class="cmsmasters_column one_first">
+<div class="cmsmasters_column_inner"><div id="cmsmasters_counters_q3kqlw4uth" class="cmsmasters_counters counters_type_vertical"><div class="cmsmasters_counter_wrap one_fourth">
+<div id="cmsmasters_counter_huwwiwibac" class="cmsmasters_counter" data-percent="140">
+<div class="cmsmasters_counter_inner">
+<div class="cmsmasters_count_wrap">
+<span class="cmsmasters_counter_counter_wrap">
+<span class="cmsmasters_counter_prefix"></span><span class="cmsmasters_counter_counter">0</span><span class="cmsmasters_counter_suffix">K</span>
+</span>
+<span class="cmsmasters_counter_title">Loan Amount</span>
+</div></div>
+</div>
+</div><div class="cmsmasters_counter_wrap one_fourth">
+<div id="cmsmasters_counter_2k1153wyk8" class="cmsmasters_counter" data-percent="18">
+<div class="cmsmasters_counter_inner">
+<div class="cmsmasters_count_wrap">
+<span class="cmsmasters_counter_counter_wrap">
+<span class="cmsmasters_counter_prefix"></span><span class="cmsmasters_counter_counter">0</span><span class="cmsmasters_counter_suffix"></span>
+</span>
+<span class="cmsmasters_counter_title">Pending Approval</span>
+</div></div>
+</div>
+</div><div class="cmsmasters_counter_wrap one_fourth">
+<div id="cmsmasters_counter_xuhb1u5wiu" class="cmsmasters_counter" data-percent="38">
+<div class="cmsmasters_counter_inner">
+<div class="cmsmasters_count_wrap">
+<span class="cmsmasters_counter_counter_wrap">
+<span class="cmsmasters_counter_prefix"></span><span class="cmsmasters_counter_counter">0</span><span class="cmsmasters_counter_suffix"></span>
+</span>
+<span class="cmsmasters_counter_title">Disbursed</span>
+</div></div>
+</div>
+</div><div class="cmsmasters_counter_wrap one_fourth">
+<div id="cmsmasters_counter_7cum9de99" class="cmsmasters_counter" data-percent="100">
+<div class="cmsmasters_counter_inner">
+<div class="cmsmasters_count_wrap">
+<span class="cmsmasters_counter_counter_wrap">
+<span class="cmsmasters_counter_prefix"></span><span class="cmsmasters_counter_counter">0</span><span class="cmsmasters_counter_suffix">%</span>
+</span>
+<span class="cmsmasters_counter_title">Happy Clients</span>
+</div></div>
+</div>
+</div></div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="cmsmasters_row_outer_parent">
+<div class="cmsmasters_row_outer">
+<div class="cmsmasters_row_inner cmsmasters_row_fullwidth">
+<div class="cmsmasters_row_margin">
+<div id="cmsmasters_column_qfc2evp8qq" class="cmsmasters_column one_first">
+</div></div>
+</div>
+</div>
+</div>
+<div id="cmsmasters_row_5n72j1xs1p" class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_boxed">
+<div class="cmsmasters_row_outer_parent">
+<div class="cmsmasters_row_outer">
+<div class="cmsmasters_row_inner">
+<div class="cmsmasters_row_margin">
+<div id="cmsmasters_column_b1fa8jpwe7" class="cmsmasters_column one_first">
+<div class="cmsmasters_column_inner"><div class="cmsmasters_quotes_slider_wrap">
+<div id="cmsmasters_quotes_slider_oxz4pvpvmd" class="cmsmasters_owl_slider owl-carousel cmsmasters_quotes cmsmasters_quotes_slider" data-auto-play="5000"><div class="cmsmasters_quote cmsmasters_owl_slider_item">
+<!-- Start Quote Slider Article -->
+<article class="cmsmasters_quote_inner">
+<div class="cmsmasters_quote_img_info_wrap"><figure class="cmsmasters_quote_image"><img fetchpriority="high" decoding="async" width="300" height="300" src="{% static 'home/' %}wp-content/uploads/2015/11/quote-1-1.jpg" class="attachment-cmsmasters-square-thumb size-cmsmasters-square-thumb" alt="" srcset="{% static 'home/' %}wp-content/uploads/2015/11/quote-1-1.jpg 300w, {% static 'home/' %}wp-content/uploads/2015/11/quote-1-1-150x150.jpg 150w, {% static 'home/' %}wp-content/uploads/2015/11/quote-1-1-90x90.jpg 90w" sizes="(max-width: 300px) 100vw, 300px" /></figure><div class="cmsmasters_quote_info_wrap"><div class="cmsmasters_quote_content"><p>Easy online application. Wonderful, personal service from start to finish. Real people who care about making you comfortable along the way.</p>
+</div><header class="cmsmasters_quote_header"><h4 class="cmsmasters_quote_title">Jill Sanders</h4></header><div class="cmsmasters_quote_subtitle_wrap"><h6 class="cmsmasters_quote_subtitle">Manager</h6><span class="cmsmasters_quote_site"><a href="http://paycheck-loan.cmsmasters.net/about-us/" target="_blank">Finance Company</a></span></div></div></div></article>
+<!-- Finish Quote Slider Article -->
+
+</div>
+<div class="cmsmasters_quote cmsmasters_owl_slider_item">
+<!-- Start Quote Slider Article-->
+<article class="cmsmasters_quote_inner">
+<div class="cmsmasters_quote_img_info_wrap"><figure class="cmsmasters_quote_image"><img decoding="async" width="300" height="300" src="{% static 'home/' %}wp-content/uploads/2015/11/quote-2-1.jpg" class="attachment-cmsmasters-square-thumb size-cmsmasters-square-thumb" alt="" srcset="{% static 'home/' %}wp-content/uploads/2015/11/quote-2-1.jpg 300w, {% static 'home/' %}wp-content/uploads/2015/11/quote-2-1-150x150.jpg 150w, {% static 'home/' %}wp-content/uploads/2015/11/quote-2-1-90x90.jpg 90w" sizes="(max-width: 300px) 100vw, 300px" /></figure><div class="cmsmasters_quote_info_wrap"><div class="cmsmasters_quote_content"><p>In the old days, when you took out a mortgage, it was probably through a local bank or a credit union, and whoever gave you your loan held on to it for life.</p>
+</div><header class="cmsmasters_quote_header"><h4 class="cmsmasters_quote_title">Grace Hall</h4></header><div class="cmsmasters_quote_subtitle_wrap"><h6 class="cmsmasters_quote_subtitle">Manager</h6><span class="cmsmasters_quote_site"><a href="http://paycheck-loan.cmsmasters.net/about-us/" target="_blank">Finance Company</a></span></div></div></div></article>
+<!--Finish Quote Slider Article-->
+</div>
+<div class="cmsmasters_quote cmsmasters_owl_slider_item">
+<!-- Start Quote Slider Article -->
+<article class="cmsmasters_quote_inner">
+<div class="cmsmasters_quote_img_info_wrap"><figure class="cmsmasters_quote_image"><img decoding="async" width="300" height="300" src="{% static 'home/' %}wp-content/uploads/2015/11/quote-3-1.jpg" class="attachment-cmsmasters-square-thumb size-cmsmasters-square-thumb" alt="" srcset="{% static 'home/' %}wp-content/uploads/2015/11/quote-3-1.jpg 300w, {% static 'home/' %}wp-content/uploads/2015/11/quote-3-1-150x150.jpg 150w, {% static 'home/' %}wp-content/uploads/2015/11/quote-3-1-90x90.jpg 90w" sizes="(max-width: 300px) 100vw, 300px" /></figure><div class="cmsmasters_quote_info_wrap"><div class="cmsmasters_quote_content"><p>Families rely on financial services more than ever, but those who need them most &#8211; who struggle to make ends meet &#8211; too often must contend with sky-high interest rates.</p>
+</div><header class="cmsmasters_quote_header"><h4 class="cmsmasters_quote_title">Nina Walker</h4></header><div class="cmsmasters_quote_subtitle_wrap"><h6 class="cmsmasters_quote_subtitle">Design</h6><span class="cmsmasters_quote_site"><a href="http://paycheck-loan.cmsmasters.net/about-us/" target="_blank">Finance Company</a></span></div></div></div></article>
+<!-- Finish Quote Slider Article -->
+
+</div>
+<div class="cmsmasters_quote cmsmasters_owl_slider_item">
+<!-- Start Quote Slider Article -->
+<article class="cmsmasters_quote_inner">
+<div class="cmsmasters_quote_img_info_wrap"><figure class="cmsmasters_quote_image"><img loading="lazy" decoding="async" width="300" height="300" src="{% static 'home/' %}wp-content/uploads/2015/11/quote-4-1.jpg" class="attachment-cmsmasters-square-thumb size-cmsmasters-square-thumb" alt="" srcset="{% static 'home/' %}wp-content/uploads/2015/11/quote-4-1.jpg 300w, {% static 'home/' %}wp-content/uploads/2015/11/quote-4-1-150x150.jpg 150w, {% static 'home/' %}wp-content/uploads/2015/11/quote-4-1-90x90.jpg 90w" sizes="(max-width: 300px) 100vw, 300px" /></figure><div class="cmsmasters_quote_info_wrap"><div class="cmsmasters_quote_content"><p>A banker who is allowed to borrow money at X and loan it out at X plus Y will just go crazy and do too much of it if the civilization doesn&#8217;t have rules that prevent it.</p>
+</div><header class="cmsmasters_quote_header"><h4 class="cmsmasters_quote_title">Daniel Sims</h4></header><div class="cmsmasters_quote_subtitle_wrap"><h6 class="cmsmasters_quote_subtitle">Manager</h6><span class="cmsmasters_quote_site"><a href="http://paycheck-loan.cmsmasters.net/about-us/" target="_blank">Finance Company</a></span></div></div></div></article>
+<!-- Finish Quote Slider Article -->
+
+</div>
+</div>
+</div><div id="cmsmasters_divider_l5nr00xw1" class="cl"></div><div class="cmsmasters_clients_grid_wrap">
+<div id="cmsmasters_clients_6k1zhy3qho" class="cmsmasters_clients_grid clients_five">
+<div class="cmsmasters_clients_items slides">
+<div class="cmsmasters_clients_item item"><img decoding="async" src="{% static 'home/' %}wp-content/uploads/2015/04/1.png" alt="Adobe" title="Adobe" /></div><div class="cmsmasters_clients_item item"><img decoding="async" src="{% static 'home/' %}wp-content/uploads/2015/04/2.png" alt="Envato" title="Envato" /></div><div class="cmsmasters_clients_item item"><img decoding="async" src="{% static 'home/' %}wp-content/uploads/2015/04/3.png" alt="jQuery" title="jQuery" /></div><div class="cmsmasters_clients_item item"><img decoding="async" src="{% static 'home/' %}wp-content/uploads/2015/04/4.png" alt="WordPress" title="WordPress" /></div><div class="cmsmasters_clients_item item"><img decoding="async" src="{% static 'home/' %}wp-content/uploads/2015/04/6.png" alt="GitHub" title="GitHub" /></div></div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="cl"></div><div class="content_wrap fullwidth">
+
+<div class="middle_content entry"></div>
+<!-- Finish Content -->
+		</div>
+{% endblock %}
