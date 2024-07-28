@@ -26,10 +26,17 @@ class Company(models.Model):
 
 class LoanRequest(models.Model):
     full_name = models.CharField(max_length=300)
+    email = models.EmailField(blank=True, null=True)
+    employee_id = models.CharField(max_length=100, blank=True, null=True)
+    address = models.CharField(max_length=250, blank=True, null=True)
+    mobile_number = models.CharField(max_length=20, blank=True, null=True)
+    monthly_income = models.FloatField(default=0)
     company = models.ForeignKey(Company, on_delete=models.SET_NULL, blank=True, null=True)
     requested_amount = models.FloatField(blank=True, null=True, max_length=20)
     interest_amount = models.FloatField(blank=True, null=True, max_length=20)
+    date_disbursed = models.DateTimeField(blank=True, null=True)
     due_date = models.DateTimeField(blank=True, null=True)
+    loan_purpose = models.TextField(blank=True, null=True)
     loan_status = models.CharField(choices=LOAN_STATUS_CHOICES, max_length=20, default="pending")
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -45,7 +52,13 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=20)
-    ...
+    email = models.EmailField(max_length=200)
+
+    def __str__(self):
+        return f"{self.user.username}: {self.company.name}"
+
+    class Meta:
+        db_table = "profile"
 
 
 
