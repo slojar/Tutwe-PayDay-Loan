@@ -14,6 +14,7 @@ urlpatterns = [
     path('login', login_view, name='login'),
     path('profile', profile_view, name='profile'),
     path('loan-request', loanrequest_view, name='loan-request'),
+    path('contact-us', contactus_view, name='contact-us'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

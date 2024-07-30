@@ -29,7 +29,7 @@ SECRET_KEY = env('SECRET_KEY', None)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["tutwe.com", "www.tutwe.com", "http://localhost:8000"]
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 

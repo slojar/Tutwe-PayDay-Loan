@@ -68,3 +68,10 @@ def loanrequest_view(request):
     }
     return render(request, 'home/loanform.html', context)
 
+
+def contactus_view(request):
+    context = {
+        # 'plans': Lesson.objects.all().order_by('price')[:3],
+    }
+    return render(request, 'home/contact-us.html', context)
+
