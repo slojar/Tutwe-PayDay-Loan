@@ -2524,8 +2524,8 @@ var log_object = {"ajax_url":"https:\/\/cash-bay.cmsmasters.net\/wp-admin\/admin
 </a>
 </div><div class="resp_mid_nav_wrap"><div class="resp_mid_nav_outer"><a class="responsive_nav resp_mid_nav" href="javascript:void(0)"><span></span></a></div></div>
         {% if user.is_authenticated %}
-        <div class="header_mid_but"><a href="index.html%3Fp=11850.html" class="cmsmasters_button cmsmasters_header_but"><span>Dashboard</span></a></div>
-        <div class="header_mid_but"><a href="index.html%3Fp=11850.html" class="cmsmasters_button cmsmasters_header_but"><span>Logout</span></a></div>
+        <div class="header_mid_but"><a href="{% url 'home:logout' %}" class="cmsmasters_button cmsmasters_header_but"><span>Logout</span></a></div>
+        <div class="header_mid_but"><a href="{% url 'home:dashboard' %}" class="cmsmasters_button cmsmasters_header_but"><span>Dashboard</span></a></div>
         {% else %}
                 <div class="header_mid_but"><a href="{% url 'home:login' %}" class="cmsmasters_button cmsmasters_header_but"><span>Login</span></a></div>
         {% endif %}

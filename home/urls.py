@@ -12,9 +12,11 @@ urlpatterns = [
     path('clients', clients_view, name='clients'),
     path('dashboard', dashboard_view, name='dashboard'),
     path('login', login_view, name='login'),
-    path('profile', profile_view, name='profile'),
+    # path('profile', profile_view, name='profile'),
     path('loan-request', loanrequest_view, name='loan-request'),
     path('contact-us', contactus_view, name='contact-us'),
+    path('logout', userlogout, name='logout'),
+    path('loan-detail/<int:pk>', loan_detail_view, name='loan-detail'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

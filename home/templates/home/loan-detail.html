@@ -1,5 +1,6 @@
 {% extends 'home/base.html' %}
 {% load static %}
+{% load humanize %}
 
 {% block body %}
 <br>
@@ -16,7 +17,7 @@
 <article id="post-2548" class="cmsmasters_open_profile post-2548 profile type-profile status-publish has-post-thumbnail hentry pl-categs-founder">
 	<header class="cmsmasters_profile_header entry-header">
         <br>
-        <h1 class="cmsmasters_profile_title entry-title">Mike Finch</h1>
+        <h1 class="cmsmasters_profile_title entry-title">{{ loan_request.full_name}}</h1>
 {#        <h5 class="cmsmasters_profile_subtitle">Founder</h5>#}
     </header><div class="profile_content with_sidebar"><div class="cmsmasters_profile_content entry-content">
 <div id="cmsmasters_row_c54ad2249c" class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_boxed">
@@ -66,29 +67,63 @@
                 <div class="profile_details_item_title">EmployeeID:</div>
                 <div class="profile_details_item_desc details_item_desc_like">
                     <span class="cmsmasters_likes cmsmasters_profile_likes">
-                        <span>6 </span>
+                        <span>{{ loan_request.employee_id }}</span>
                     </span>
                 </div>
             </div>
             <div class="profile_details_item">
                 <div class="profile_details_item_title">Address:</div>
-                <div class="profile_details_item_desc">34 Anywhere Road Coventry CV6</div>
+                <div class="profile_details_item_desc">{{ loan_request.address}}</div>
             </div>
             <div class="profile_details_item">
                 <div class="profile_details_item_title">Phone:</div>
-                <div class="profile_details_item_desc">+2348105800750</div>
+                <div class="profile_details_item_desc">{{ loan_request.mobile_number }}</div>
             </div><div class="profile_details_item">
             <div class="profile_details_item_title">Email:</div>
-            <div class="profile_details_item_desc">example@example.com</div>
+            <div class="profile_details_item_desc">{{ loan_request.email}}</div>
         </div>
             <div class="profile_details_item">
                 <div class="profile_details_item_title">Monthly Income:</div>
                 <div class="profile_details_item_desc">
-                    <span class="cmsmasters_profile_category">100,000</span>
+                    <span class="cmsmasters_profile_category">{{ loan_request.monthly_income|intcomma}}</span>
                 </div>
             </div>
+                <div class="profile_details_item">
+                    <div class="profile_details_item_title">Interest Amount:</div>
+                    <div class="profile_details_item_desc">
+                        <span class="cmsmasters_profile_category">{{ loan_request.interest_amount|intcomma}}</span>
+                </div>
+                                    <div class="profile_details_item">
+                    <div class="profile_details_item_title">Requested Amount:</div>
+                    <div class="profile_details_item_desc">
+                        <span class="cmsmasters_profile_category">{{ loan_request.requested_amount|intcomma}}</span>
+                </div>
+
+                                    <div class="profile_details_item">
+                    <div class="profile_details_item_title">Amount to repay:</div>
+                    <div class="profile_details_item_desc">
+                        <span class="cmsmasters_profile_category">{{ loan_request.requested_amount|add:loan_request.interest_amount|intcomma}}</span>
+                </div>
+                <div class="profile_details_item">
+                    <div class="profile_details_item_title">Due Date:</div>
+                    <div class="profile_details_item_desc">
+                        <span class="cmsmasters_profile_category">{{ loan_request.due_date|date}}</span>
+                </div>
+                                    <div class="profile_details_item">
+                    <div class="profile_details_item_title">Status:</div>
+                    <div class="profile_details_item_desc">
+                        <span class="cmsmasters_profile_category">{{ loan_request.loan_status}}</span>
+                </div>
+                <div class="profile_details_item">
+                    <div class="profile_details_item_title">Loan Purpose:</div>
+                    <div class="profile_details_item_desc">
+                        <span class="cmsmasters_profile_category">{{ loan_request.loan_purpose}}</span>
+                </div>
+
+
+            </div>
         </div>
-    </div>
+                </div></div></div></div></div></div>
         </article>
 <!-- Finish Profile Single Article -->
 {#<aside class="post_nav"><span class="cmsmasters_prev_post"><a href="index.html%3Fp=446.html" rel="prev">Julia Jameson</a><span class="cmsmasters_prev_arrow"><span></span></span><span class="sub">previous</span></span><span class="cmsmasters_next_post"><a href="index.html%3Fp=1619.html" rel="next">Mary Hardman</a><span class="cmsmasters_next_arrow"><span></span></span><span class="sub">next</span></span></aside></div></div>#}

@@ -1,5 +1,6 @@
 {% extends 'home/base.html' %}
 {% load static %}
+{% load humanize %}
 
 {% block body %}
 
@@ -27,7 +28,7 @@
 	<h3 class="cmsmasters_heading">Loan Analysis</h3><hr>
 </div><div class="cmsmasters_stats stats_mode_circles stats_type_horizontal"><div id="cmsmasters_stat_wrap_z1vjigvgij" class="cmsmasters_stat_wrap one_fourth">
 
-<div id="cmsmasters_stat_z1vjigvgij" class="cmsmasters_stat" data-percent="75">
+<div id="cmsmasters_stat_z1vjigvgij" class="cmsmasters_stat" data-percent="{{ tloan }}">
 <div class="cmsmasters_stat_inner">
 <span class="cmsmasters_stat_counter_wrap">
 <span class="cmsmasters_stat_counter">0</span><span class="cmsmasters_stat_units"></span>
@@ -37,7 +38,7 @@
 <span class="cmsmasters_stat_title">Total Loan </span>
 </div><div id="cmsmasters_stat_wrap_ghf9swr3bi" class="cmsmasters_stat_wrap one_fourth">
 
-<div id="cmsmasters_stat_ghf9swr3bi" class="cmsmasters_stat" data-percent="80">
+<div id="cmsmasters_stat_ghf9swr3bi" class="cmsmasters_stat" data-percent="{{ aploan }}">
 <div class="cmsmasters_stat_inner">
 <span class="cmsmasters_stat_counter_wrap">
 <span class="cmsmasters_stat_counter">0</span><span class="cmsmasters_stat_units"></span>
@@ -47,7 +48,7 @@
 <span class="cmsmasters_stat_title">Total Approved </span>
 </div><div id="cmsmasters_stat_wrap_9yi922cx9" class="cmsmasters_stat_wrap one_fourth">
 
-<div id="cmsmasters_stat_9yi922cx9" class="cmsmasters_stat" data-percent="95">
+<div id="cmsmasters_stat_9yi922cx9" class="cmsmasters_stat" data-percent="{{ disloan }}">
 <div class="cmsmasters_stat_inner">
 <span class="cmsmasters_stat_counter_wrap">
 <span class="cmsmasters_stat_counter">0</span><span class="cmsmasters_stat_units"></span>
@@ -57,7 +58,7 @@
 <span class="cmsmasters_stat_title">Total Disbursed </span>
 </div><div id="cmsmasters_stat_wrap_yqli08emsq" class="cmsmasters_stat_wrap one_fourth">
 
-<div id="cmsmasters_stat_yqli08emsq" class="cmsmasters_stat" data-percent="70">
+<div id="cmsmasters_stat_yqli08emsq" class="cmsmasters_stat" data-percent="{{ ploan }}">
 <div class="cmsmasters_stat_inner">
 <span class="cmsmasters_stat_counter_wrap">
 <span class="cmsmasters_stat_counter">0</span><span class="cmsmasters_stat_units"></span>
@@ -82,40 +83,21 @@
                 <th class="cmsmasters_table_cell_aligncenter border-0 outline-0">STATUS</th>
             </tr>
             </thead>
+            {% for loan_request in loan_requests %}
             <tr>
-                <td class="cmsmasters_table_cell_aligncenter">Division</td>
-                <td class="cmsmasters_table_cell_aligncenter">Division</td>
-                <td class="cmsmasters_table_cell_aligncenter">Division</td>
-                <td class="cmsmasters_table_cell_aligncenter">Division</td>
-                <td class="cmsmasters_table_cell_aligncenter">Division</td>
-                <td class="cmsmasters_table_cell_aligncenter">Division</td>
+                <td class="cmsmasters_table_cell_aligncenter">{{ loan_request.employee_id }}</td>
+                <td class="cmsmasters_table_cell_aligncenter">{{ loan_request.full_name }}</td>
+                <td class="cmsmasters_table_cell_aligncenter">{{ loan_request.requested_amount|intcomma }}</td>
+                <td class="cmsmasters_table_cell_aligncenter">{{ loan_request.requested_amount|add:loan_request.interest_amount|intcomma }}</td>
+                <td class="cmsmasters_table_cell_aligncenter">{{ loan_request.due_date|date }}</td>
+                <td style="font-size: 0.8rem" class="cmsmasters_table_cell_aligncenter">{{ loan_request.get_loan_status_display }}</td>
                 <td style="border: none">
-                    <button>VIEW</button>
+                    <a href="{% url 'home:loan-detail' loan_request.id %}"><button>VIEW</button></a>
                 </td>
 {#                <td class="cmsmasters_table_cell_aligncenter border-0 outline-none">VIEW</td>#}
             </tr>
-            <tr>
-                <td class="cmsmasters_table_cell_aligncenter">Division</td>
-                <td class="cmsmasters_table_cell_aligncenter">Division</td>
-                <td class="cmsmasters_table_cell_aligncenter">Division</td>
-                <td class="cmsmasters_table_cell_aligncenter">Division</td>
-                <td class="cmsmasters_table_cell_aligncenter">Division</td>
-                <td class="cmsmasters_table_cell_aligncenter">Division</td>
-                <td style="border: none">
-                    <button>VIEW</button>
-                </td>
-            </tr>
-            <tr>
-                <td class="cmsmasters_table_cell_aligncenter">Division</td>
-                <td class="cmsmasters_table_cell_aligncenter">Division</td>
-                <td class="cmsmasters_table_cell_aligncenter">Division</td>
-                <td class="cmsmasters_table_cell_aligncenter">Division</td>
-                <td class="cmsmasters_table_cell_aligncenter">Division</td>
-                <td class="cmsmasters_table_cell_aligncenter">Division</td>
-                <td style="border: none">
-                    <button>VIEW</button>
-                </td>
-            </tr>
+            {% endfor %}
+
             </table></div>
 </div></div>
 </div>
