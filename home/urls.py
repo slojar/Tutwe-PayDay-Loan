@@ -17,6 +17,7 @@ urlpatterns = [
     path('contact-us', contactus_view, name='contact-us'),
     path('logout', userlogout, name='logout'),
     path('new-client', new_client_view, name='new-client'),
+    path('add-user', new_user_view, name='new-user'),
     path('users', users_view, name='users'),
     path('loan-detail/<int:pk>', loan_detail_view, name='loan-detail'),
 

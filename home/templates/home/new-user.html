@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="{% static 'home/' %}loanform/css/bootstrap.min.css">
 
 <link rel="stylesheet" href="{% static 'home/' %}loanform/css/style.css">
-<title>Loan Request</title>
+<title>Add User</title>
 </head>
 <body>
 <div class="content">
@@ -22,34 +22,37 @@
 <div class="row align-items-stretch no-gutters contact-wrap">
 <div class="col-md-12">
 <div class="form h-100">
-<h3>Add New Client/Company</h3>
+<h3>Add New User</h3>
 <form class="mb-5" method="post" id="contactForm" name="contactForm">
 <div class="row">
 <div class="col-md-6 form-group mb-3">
-<label for class="col-form-label">Name *</label>
-<input type="text" class="form-control" name="name" id="name" placeholder="Enter client name">
+<input type="text" class="form-control" name="fname" id="fname" placeholder="First Name" required>
 </div>
 <div class="col-md-6 form-group mb-3">
-<label for class="col-form-label">Description *</label>
-<input type="email" class="form-control" name="email" id="email" placeholder="Description text">
+<input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name" required>
+</div>
+<div class="col-md-6 form-group mb-3">
+<input type="text" class="form-control" name="phone" id="phone" placeholder="Phone Number" required>
+</div>
+<div class="col-md-6 form-group mb-3">
+<input type="email" class="form-control" name="email" id="email" placeholder="Email">
 </div>
 </div>
 <div class="row">
-<div class="col-md-6 form-group mb-3">
-<label for class="col-form-label">Address *</label>
-<input type="text" class="form-control" name="name" id="name" placeholder="Enter client's address">
+<div class="col-md-12 form-group mb-3">
+<label for="budget" class="col-form-label">Company *</label>
+<select class="custom-select" id="budget" name="budget">
+<option selected>Select Company</option>
+{% for comp in company %}
+<option value={{ comp.id }}>{{ comp.name }}</option>
+{% endfor %}
+</select>
 </div>
 </div>
 <div class="row">
-<div class="col-md-6 form-group mb-3">
-<label for class="col-form-label">Logo *</label>
-<input type="file" class="form-control" name="logo" id="logo">
-</div>
-</div>
-    <div class="row">
 <div class="col-md-12 form-group">
-    <a href="{% url 'home:clients' %}"><input  style="cursor: pointer !important" value="Cancel" class="btn btn-primary rounded-0 py-2 px-4"></a>
-<input type="submit" value="Add Client" class="btn btn-info rounded-0 py-2 px-4">
+    <a href="{% url 'home:users' %}"><input  style="cursor: pointer !important" value="Cancel" class="btn btn-primary rounded-0 py-2 px-4"></a>
+    <input type="submit" value="Create User" class="btn btn-info rounded-0 py-2 px-4">
 <span class="submitting"></span>
 </div>
 </div>

@@ -109,6 +109,14 @@ def users_view(request):
     return render(request, 'home/company-users.html', context)
 
 
+def new_user_view(request):
+    company_list = [{"id": company.id, "name": company.name} for company in Company.objects.all().order_by("name")]
+    context = {
+        "company": company_list
+    }
+    return render(request, 'home/new-user.html', context)
+
+
 def userlogout(request):
     logout(request)
     return redirect('/')

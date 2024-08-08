@@ -112,7 +112,13 @@
                                     <div class="profile_details_item">
                     <div class="profile_details_item_title">Status:</div>
                     <div class="profile_details_item_desc">
-                        <span class="cmsmasters_profile_category">{{ loan_request.loan_status}}</span>
+                        {% if loan_request.loan_status == "pending" %}
+                        <span style="color: #00A8FF" class="cmsmasters_profile_category">{{ loan_request.get_loan_status_display }}</span>
+                        {% elif loan_request.loan_status == "due" %}
+                        <span style="color: red" class="cmsmasters_profile_category">{{ loan_request.get_loan_status_display }}</span>
+                        {% else %}
+                        <span style="color: #00d084" class="cmsmasters_profile_category">{{ loan_request.get_loan_status_display }}</span>
+                        {% endif %}
                 </div>
                 <div class="profile_details_item">
                     <div class="profile_details_item_title">Loan Purpose:</div>
