@@ -23,33 +23,35 @@
 <div class="col-md-12">
 <div class="form h-100">
 <h3>Add New Client/Company</h3>
-<form class="mb-5" method="post" id="contactForm" name="contactForm">
+<form class="mb-5" method="POST" action="/new-client" enctype="multipart/form-data">
+    {% csrf_token %}
 <div class="row">
 <div class="col-md-6 form-group mb-3">
 <label for class="col-form-label">Name *</label>
-<input type="text" class="form-control" name="name" id="name" placeholder="" required>
+<input type="text" class="form-control" name="name" id="name" placeholder="" value="{{ name }}" required>
 </div>
 <div class="col-md-6 form-group mb-3">
-<label for class="col-form-label">Description *</label>
-<input type="text" class="form-control" name="desc" id="desc" placeholder="" required>
+<label for class="col-form-label">Description</label>
+<input type="text" class="form-control" name="description" id="description" placeholder="" value="{{ description }}">
 </div>
 </div>
 <div class="row">
 <div class="col-md-6 form-group mb-3">
-<label for class="col-form-label">Address *</label>
-<input type="text" class="form-control" name="addr" id="addr" placeholder="" required>
+<label for class="col-form-label">Address</label>
+<input type="text" class="form-control" name="address" id="address" placeholder="" value="{{ address }}">
 </div>
 </div>
 <div class="row">
 <div class="col-md-6 form-group mb-3">
 <label for class="col-form-label">Logo *</label>
-<input type="file" class="form-control" name="logo" id="logo" required>
+<input type="file" class="form-control" name="logo" id="logo" value="{{ logo }}">
 </div>
 </div>
     <div class="row">
 <div class="col-md-12 form-group">
     <a href="{% url 'home:clients' %}"><input  style="cursor: pointer !important" value="Cancel" class="btn btn-primary rounded-0 py-2 px-4"></a>
-<input type="submit" value="Add Client" class="btn btn-info rounded-0 py-2 px-4">
+<button type="submit" name="submit" value="new-client" class="btn btn-info rounded-0 py-2 px-4">Create</button>
+{#<input type="submit" value="new-client" class="btn btn-info rounded-0 py-2 px-4">#}
 <span class="submitting"></span>
 </div>
 </div>

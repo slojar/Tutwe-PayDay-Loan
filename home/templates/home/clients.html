@@ -22,19 +22,50 @@
 <div class="cmsmasters_row_margin">
 <div id="cmsmasters_column_" class="cmsmasters_column one_first">
 <div class="cmsmasters_column_inner"><div class="cmsmasters_clients_grid_wrap">
-<div id="cmsmasters_clients_cc2fe98e37" class="cmsmasters_clients_grid clients_five">
 <br>
+<div id="cmsmasters_clients_cc2fe98e37" class="cmsmasters_clients_grid clients_five">
 {% if request.user.is_staff %}
+
+              <!-- Messages and Notices -->
+          {% if form.errors %} {% for field in form %} {% for err in field.errors %}
+          <div style="color: red; font-weight: bold; text-align: center">
+            {{err}}
+          </div>
+          {% endfor %} {% endfor %} {% endif %} {% if messages %} {% for msg in messages %} {% if msg.tags == 'success' %}
+          <div style="color: green; font-weight: bold; text-align: center">
+            {{msg}}
+          </div>
+          {% endif %} {% if msg.tags == 'error' %}
+          <div style="color: red; font-weight: bold; text-align: center">
+            {{msg}}
+          </div>
+          {% endif %} {% endfor %} {% endif %}
+          <!-- End Messages and Notices -->
+    <br>
+
+
 <a href="{% url 'home:new-client' %}"><button>Add New Client</button></a>
 {% endif %}
 
 <div class="cmsmasters_clients_items slides">
-<div class="cmsmasters_clients_item item"><img decoding="async" src="{% static 'home/' %}wp-content/uploads/2015/04/1.png" alt="Adobe" title="Adobe" /></div><div class="cmsmasters_clients_item item"><img decoding="async" src="{% static 'home/' %}wp-content/uploads/2015/04/2.png" alt="Envato" title="Envato" /></div><div class="cmsmasters_clients_item item"><img decoding="async" src="{% static 'home/' %}wp-content/uploads/2015/04/3.png" alt="jQuery" title="jQuery" /></div><div class="cmsmasters_clients_item item"><img decoding="async" src="{% static 'home/' %}wp-content/uploads/2015/04/4.png" alt="WordPress" title="WordPress" /></div><div class="cmsmasters_clients_item item"><img decoding="async" src="{% static 'home/' %}wp-content/uploads/2015/04/6.png" alt="GitHub" title="GitHub" /></div></div>
+<br>
+    {% for client in clients %}
+{#    <p>{{ client.name }}</p>#}
+<div class="cmsmasters_clients_item item">
+{% if client.logo %}
+    <img src="{{ client.logo.url }}" alt="{{ client.name }}" title="{{ client.name }}" />
+    {% else %}
+    <img src="{% static 'home/' %}wp-content/uploads/2015/04/office-image.jpg" alt="{{ client.name }}" title="{{ client.name }}" />
+    {% endif %}
+<h6><strong>{{ client.name }}</strong></h6>
+{#    <img src="{% static 'home/' %}wp-content/uploads/2015/04/1.png" alt="Adobe" title="Adobe" />#}
+</div>
+    {% endfor %}
 </div>
 </div>
-<div id="cmsmasters_divider_05f295789d" class="cmsmasters_divider cmsmasters_divider_width_long cmsmasters_divider_pos_center"></div><div class="cmsmasters_clients_slider_wrap slides_control ">
-<div id="cmsmasters_clients_r2bsjij2yy" class="cmsmasters_owl_slider owl-carousel cmsmasters_clients_slider" data-items="5" data-single-item="false" data-auto-play="false" data-slide-speed="1000" data-pagination-speed="1000" data-pagination="true" data-navigation="false"><div class="cmsmasters_clients_item item cmsmasters_owl_slider_item"><img decoding="async" src="{% static 'home/' %}wp-content/uploads/2015/04/1.png" alt="Adobe" title="Adobe" /></div><div class="cmsmasters_clients_item item cmsmasters_owl_slider_item"><img decoding="async" src="{% static 'home/' %}wp-content/uploads/2015/04/2.png" alt="Envato" title="Envato" /></div><div class="cmsmasters_clients_item item cmsmasters_owl_slider_item"><img decoding="async" src="{% static 'home/' %}wp-content/uploads/2015/04/3.png" alt="jQuery" title="jQuery" /></div><div class="cmsmasters_clients_item item cmsmasters_owl_slider_item"><img decoding="async" src="{% static 'home/' %}wp-content/uploads/2015/04/4.png" alt="WordPress" title="WordPress" /></div><div class="cmsmasters_clients_item item cmsmasters_owl_slider_item"><img decoding="async" src="{% static 'home/' %}wp-content/uploads/2015/04/6.png" alt="GitHub" title="GitHub" /></div><div class="cmsmasters_clients_item item cmsmasters_owl_slider_item"><img decoding="async" src="{% static 'home/' %}wp-content/uploads/2015/04/5.png" alt="Sass" title="Sass" /></div></div>
+<br>
 </div>
+<br>
 </div></div>
 </div>
 </div>

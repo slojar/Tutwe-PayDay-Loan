@@ -4,7 +4,7 @@
 {% block body %}
 <!-- Start Middle -->
 <div id="middle">
-<div class="middle_inner">
+    <div class="middle_inner">
 <div class="content_wrap fullwidth">
 
 <!-- Start Content -->
@@ -418,8 +418,21 @@
 </div><div id="cmsmasters_divider_l5nr00xw1" class="cl"></div><div class="cmsmasters_clients_grid_wrap">
 <div id="cmsmasters_clients_6k1zhy3qho" class="cmsmasters_clients_grid clients_five">
 <div class="cmsmasters_clients_items slides">
-<div class="cmsmasters_clients_item item"><img decoding="async" src="{% static 'home/' %}wp-content/uploads/2015/04/1.png" alt="Adobe" title="Adobe" /></div><div class="cmsmasters_clients_item item"><img decoding="async" src="{% static 'home/' %}wp-content/uploads/2015/04/2.png" alt="Envato" title="Envato" /></div><div class="cmsmasters_clients_item item"><img decoding="async" src="{% static 'home/' %}wp-content/uploads/2015/04/3.png" alt="jQuery" title="jQuery" /></div><div class="cmsmasters_clients_item item"><img decoding="async" src="{% static 'home/' %}wp-content/uploads/2015/04/4.png" alt="WordPress" title="WordPress" /></div><div class="cmsmasters_clients_item item"><img decoding="async" src="{% static 'home/' %}wp-content/uploads/2015/04/6.png" alt="GitHub" title="GitHub" /></div></div>
+    {% for client in clients %}
+{#    <p>{{ client.name }}</p>#}
+<div class="cmsmasters_clients_item item">
+{% if client.logo %}
+    <img src="{{ client.logo.url }}" alt="{{ client.name }}" title="{{ client.name }}" />
+    {% else %}
+    <img src="{% static 'home/' %}wp-content/uploads/2015/04/office-image.jpg" alt="{{ client.name }}" title="{{ client.name }}" />
+    {% endif %}
+<h6><strong>{{ client.name }}</strong></h6>
+{#    <img src="{% static 'home/' %}wp-content/uploads/2015/04/1.png" alt="Adobe" title="Adobe" />#}
 </div>
+    {% endfor %}
+</div>
+</div>
+<br>
 </div>
 </div></div>
 </div>
