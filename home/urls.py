@@ -16,6 +16,8 @@ urlpatterns = [
     path('loan-request', loanrequest_view, name='loan-request'),
     path('contact-us', contactus_view, name='contact-us'),
     path('logout', userlogout, name='logout'),
+    path('new-client', new_client_view, name='new-client'),
+    path('users', users_view, name='users'),
     path('loan-detail/<int:pk>', loan_detail_view, name='loan-detail'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

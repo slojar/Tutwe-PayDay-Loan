@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 
 from home.forms import LoginForm
-from home.models import LoanRequest, UserProfile
+from home.models import LoanRequest, UserProfile, Company
 
 
 def home_view(request):
@@ -26,6 +26,8 @@ def clients_view(request):
 
 
 def dashboard_view(request):
+    if not request.user.is_authenticated:
+        return redirect(reverse("home:homepage"))
     user = request.user
     loan_requests = LoanRequest.objects.all().order_by("-created_on")
     if not user.is_staff:
@@ -81,7 +83,9 @@ def login_view(request):
 
 
 def loanrequest_view(request):
+    company_list = [{"id": company.id, "name": company.name} for company in Company.objects.all().order_by("name")]
     context = {
+        "company": company_list
     }
     return render(request, 'home/loanform.html', context)
 
@@ -90,6 +94,19 @@ def contactus_view(request):
     context = {
     }
     return render(request, 'home/contact-us.html', context)
+
+
+def new_client_view(request):
+    context = {
+    }
+    return render(request, 'home/new-client.html', context)
+
+
+def users_view(request):
+    context = {
+        "users": UserProfile.objects.filter(user__is_staff=False)
+    }
+    return render(request, 'home/company-users.html', context)
 
 
 def userlogout(request):
