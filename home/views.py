@@ -115,7 +115,7 @@ def loanrequest_view(request):
             purpose = form.cleaned_data.get('purpose')
 
             # Calculate interest
-            interest_rate = 0.15  # 15%
+            interest_rate = 0.1  # 10%
             interest_amount = float(interest_rate) * float(amount_needed)
             # Set due date to end of the month (27th)
             due = timezone.now().today().replace(day=27)
