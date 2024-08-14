@@ -1,0 +1,83 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block body %}
+
+<!-- Start Middle -->
+<div id="middle">
+<div class="headline cmsmasters_color_scheme_default">
+				<div class="headline_outer">
+					<div class="headline_color"></div><div class="headline_inner align_center">
+					<div class="headline_aligner"></div><div class="headline_text"><h1 class="entry-title">Our Clients</h1></div><div class="cmsmasters_breadcrumbs"><div class="cmsmasters_breadcrumbs_aligner"></div><div class="cmsmasters_breadcrumbs_inner"><a href="{% url 'home:homepage' %}" class="cms_home">Home</a>
+	<span class="breadcrumbs_sep"> / </span>
+	<span>Clients</span></div></div></div></div>
+			</div><div class="middle_inner">
+<div class="content_wrap fullwidth">
+
+<!-- Start Content -->
+<div class="middle_content entry"></div></div><div id="cmsmasters_row_6830fba50c" class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_boxed">
+<div class="cmsmasters_row_outer_parent">
+<div class="cmsmasters_row_outer">
+<div class="cmsmasters_row_inner">
+<div class="cmsmasters_row_margin">
+<div id="cmsmasters_column_" class="cmsmasters_column one_first">
+<div class="cmsmasters_column_inner"><div class="cmsmasters_clients_grid_wrap">
+<br>
+<div id="cmsmasters_clients_cc2fe98e37" class="cmsmasters_clients_grid clients_five">
+{% if request.user.is_staff %}
+
+              <!-- Messages and Notices -->
+          {% if form.errors %} {% for field in form %} {% for err in field.errors %}
+          <div style="color: red; font-weight: bold; text-align: center">
+            {{err}}
+          </div>
+          {% endfor %} {% endfor %} {% endif %} {% if messages %} {% for msg in messages %} {% if msg.tags == 'success' %}
+          <div style="color: green; font-weight: bold; text-align: center">
+            {{msg}}
+          </div>
+          {% endif %} {% if msg.tags == 'error' %}
+          <div style="color: red; font-weight: bold; text-align: center">
+            {{msg}}
+          </div>
+          {% endif %} {% endfor %} {% endif %}
+          <!-- End Messages and Notices -->
+    <br>
+
+
+<a href="{% url 'home:new-client' %}"><button style="background-color: #2a3994 !important;">Add New Client</button></a>
+{% endif %}
+
+<div class="cmsmasters_clients_items slides">
+<br>
+    {% for client in clients %}
+{#    <p>{{ client.name }}</p>#}
+<div class="cmsmasters_clients_item item">
+{% if client.logo %}
+    <img src="{{ client.logo.url }}" alt="{{ client.name }}" title="{{ client.name }}" />
+    {% else %}
+    <img src="{% static 'home/' %}wp-content/uploads/2015/04/office-image.jpg" alt="{{ client.name }}" title="{{ client.name }}" />
+    {% endif %}
+<h6><strong>{{ client.name }}</strong></h6>
+{#    <img src="{% static 'home/' %}wp-content/uploads/2015/04/1.png" alt="Adobe" title="Adobe" />#}
+</div>
+    {% endfor %}
+</div>
+</div>
+<br>
+</div>
+<br>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="cl"></div><div class="content_wrap fullwidth">
+
+<div class="middle_content entry"></div>
+<!-- Finish Content -->
+</div>
+</div>
+</div>
+{% endblock %}

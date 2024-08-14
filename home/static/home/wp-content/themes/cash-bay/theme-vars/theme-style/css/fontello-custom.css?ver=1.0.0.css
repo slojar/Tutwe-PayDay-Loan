@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'fontello-custom';
+  src: url('fonts/fontello-custom.eot%3F82565511');
+  src: url('fonts/fontello-custom.eot%3F82565511') format('embedded-opentype'),
+       url('fonts/fontello-custom.woff%3F82565511') format('woff'),
+       url('fonts/fontello-custom.ttf%3F82565511') format('truetype'),
+       url('fonts/fontello-custom.svg%3F82565511') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello-custom';
+    src: url('fonts/fontello-custom.svg?82565511#fontello-custom') format('svg');
+  }
+}
+*/
+ 
+ [class^="cmsmasters-icon-custom-"]:before, [class*=" cmsmasters-icon-custom-"]:before {
+  font-family: "fontello-custom";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.cmsmasters-icon-custom-clock:before { content: '\e800'; } /* '' */
+.cmsmasters-icon-custom-graph:before { content: '\e801'; } /* '' */
+.cmsmasters-icon-custom-handshake:before { content: '\e802'; } /* '' */
+.cmsmasters-icon-custom-key:before { content: '\e803'; } /* '' */
+.cmsmasters-icon-custom-man:before { content: '\e804'; } /* '' */
+.cmsmasters-icon-custom-money:before { content: '\e805'; } /* '' */
+.cmsmasters-icon-custom-team:before { content: '\e806'; } /* '' */
+.cmsmasters-icon-custom-truck:before { content: '\e807'; } /* '' */
+.cmsmasters-icon-custom-search:before { content: '\e815'; } /* '' */
+.cmsmasters-icon-custom-instagram-with-circle:before { content: '\e816'; } /* '' */
+.cmsmasters-icon-custom-calendar:before { content: '\e81a'; } /* '' */
+.cmsmasters-icon-custom-baloon:before { content: '\e81b'; } /* '' */
+.cmsmasters-icon-custom-camera:before { content: '\e81c'; } /* '' */
+.cmsmasters-icon-custom-card:before { content: '\e81d'; } /* '' */
+.cmsmasters-icon-custom-finger:before { content: '\e81e'; } /* '' */
+.cmsmasters-icon-custom-hands:before { content: '\e81f'; } /* '' */
+.cmsmasters-icon-custom-heart:before { content: '\e820'; } /* '' */
+.cmsmasters-icon-custom-home:before { content: '\e821'; } /* '' */
+.cmsmasters-icon-custom-lock:before { content: '\e822'; } /* '' */
+.cmsmasters-icon-custom-pig:before { content: '\e823'; } /* '' */
+.cmsmasters-icon-custom-plane:before { content: '\e824'; } /* '' */
+.cmsmasters-icon-custom-science:before { content: '\e825'; } /* '' */
+.cmsmasters-icon-custom-search-1:before { content: '\e826'; } /* '' */
+.cmsmasters-icon-custom-seo-monitoring:before { content: '\e827'; } /* '' */
+.cmsmasters-icon-custom-share:before { content: '\e828'; } /* '' */
+.cmsmasters-icon-custom-stairs:before { content: '\e829'; } /* '' */
+.cmsmasters-icon-custom-study:before { content: '\e82a'; } /* '' */
+.cmsmasters-icon-custom-time:before { content: '\e82b'; } /* '' */
+.cmsmasters-icon-custom-tools:before { content: '\e82c'; } /* '' */
+.cmsmasters-icon-custom-university:before { content: '\e82d'; } /* '' */
+.cmsmasters-icon-custom-people:before { content: '\e82e'; } /* '' */
+.cmsmasters-icon-custom-instagram:before { content: '\f16d'; } /* '' */
+.cmsmasters-icon-custom-tripadvisor:before { content: '\f262'; } /* '' */
+.cmsmasters-icon-custom-snapchat:before { content: '\f2ab'; } /* '' */
+.cmsmasters-icon-custom-snapchat-ghost:before { content: '\f2ac'; } /* '' */
+.cmsmasters-icon-custom-snapchat-square:before { content: '\f2ad'; } /* '' */

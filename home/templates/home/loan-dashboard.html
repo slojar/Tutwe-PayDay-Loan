@@ -1,0 +1,235 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block body %}
+
+<!-- Start Middle -->
+<div id="middle">
+    <div class="headline cmsmasters_color_scheme_default">
+        <div class="headline_outer">
+            <div class="headline_color"></div>
+            <div class="headline_inner align_center">
+                <div class="headline_aligner"></div>
+                <div class="headline_text">
+                    <h1 class="entry-title">Dashboard</h1>
+                </div>
+                <div class="cmsmasters_breadcrumbs">
+                    <div class="cmsmasters_breadcrumbs_aligner"></div>
+                    <div class="cmsmasters_breadcrumbs_inner">
+                        <a href="{% url 'home:homepage' %}" class="cms_home">Home</a>
+                        <span class="breadcrumbs_sep"> / </span>
+                        <span>Dashboard</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle_inner">
+        <div class="content_wrap fullwidth">
+
+            <!-- Start Content -->
+            <div class="middle_content entry"></div>
+            <div id="cmsmasters_row_925eeececb" class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_boxed">
+                <div class="cmsmasters_row_outer_parent">
+                    <div class="cmsmasters_row_outer">
+                        <div class="cmsmasters_row_inner">
+                            <div class="cmsmasters_row_margin">
+                                <div id="cmsmasters_column_" class="cmsmasters_column one_first">
+                                    <div id="cmsmasters_column_" class="cmsmasters_column one_first">
+                                        <div class="cmsmasters_column_inner">
+                                            <div id="cmsmasters_heading_34fd43963d" class="cmsmasters_heading_wrap cmsmasters_heading_align_left">
+                                                <br>
+                                                {% if request.user.is_staff %}
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-sm-3">
+                                                        <a href="{% url 'home:users' %}"><button style="background-color: #2a3994 !important;">View Company Users</button></a>
+                                                    </div>
+                                                </div>
+                                                {% endif %}
+                                                <br>
+                                                <h3 class="cmsmasters_heading">Loan Analysis</h3>
+                                                <hr>
+                                            </div>
+
+                                         
+
+                                        <!-- Loan Analysis Stats -->
+<div class="cmsmasters_stats stats_mode_circles stats_type_horizontal">
+    <div id="cmsmasters_stat_wrap_z1vjigvgij" class="cmsmasters_stat_wrap one_fourth">
+        <div id="cmsmasters_stat_z1vjigvgij" class="cmsmasters_stat" data-percent="{{ tloan }}">
+            <div class="cmsmasters_stat_inner">
+                <span class="cmsmasters_stat_counter_wrap">
+                    <span class="cmsmasters_stat_counter">0</span>
+                    <span class="cmsmasters_stat_units"></span>
+                </span>
+            </div>
+        </div>
+        <span class="cmsmasters_stat_title">Total Loan</span>
+    </div>
+
+    <div id="cmsmasters_stat_wrap_ghf9swr3bi" class="cmsmasters_stat_wrap one_fourth">
+        <div id="cmsmasters_stat_ghf9swr3bi" class="cmsmasters_stat" data-percent="{{ aploan }}">
+            <div class="cmsmasters_stat_inner">
+                <span class="cmsmasters_stat_counter_wrap">
+                    <span class="cmsmasters_stat_counter">0</span>
+                    <span class="cmsmasters_stat_units"></span>
+                </span>
+            </div>
+        </div>
+        <span class="cmsmasters_stat_title">Total Approved</span>
+    </div>
+
+    <div id="cmsmasters_stat_wrap_9yi922cx9" class="cmsmasters_stat_wrap one_fourth">
+        <div id="cmsmasters_stat_ghf9swr3bi" class="cmsmasters_stat" data-percent="{{ decloan }}">
+            <div class="cmsmasters_stat_inner">
+                <span class="cmsmasters_stat_counter_wrap">
+                    <span class="cmsmasters_stat_counter">0</span>
+                    <span class="cmsmasters_stat_units"></span>
+                </span>
+            </div>
+        </div>
+        <span class="cmsmasters_stat_title">Total Declined</span>
+    </div>
+
+    <div id="cmsmasters_stat_wrap_9yi922cx9" class="cmsmasters_stat_wrap one_fourth">
+        <div id="cmsmasters_stat_9yi922cx9" class="cmsmasters_stat" data-percent="{{ disloan }}">
+            <div class="cmsmasters_stat_inner">
+                <span class="cmsmasters_stat_counter_wrap">
+                    <span class="cmsmasters_stat_counter">0</span>
+                    <span class="cmsmasters_stat_units"></span>
+                </span>
+            </div>
+        </div>
+        <span class="cmsmasters_stat_title">Total Disbursed</span>
+    </div>
+
+    <div id="cmsmasters_stat_wrap_yqli08emsq" class="cmsmasters_stat_wrap one_fourth">
+        <div id="cmsmasters_stat_yqli08emsq" class="cmsmasters_stat" data-percent="{{ ploan }}">
+            <div class="cmsmasters_stat_inner">
+                <span class="cmsmasters_stat_counter_wrap">
+                    <span class="cmsmasters_stat_counter">0</span>
+                    <span class="cmsmasters_stat_units"></span>
+                </span>
+            </div>
+        </div>
+        <span class="cmsmasters_stat_title">Pending Approval</span>
+    </div>
+
+    <br>
+
+    <div class="cmsmasters_filter">
+        <!-- Filter Form -->
+        <form id="filter-form">
+            <label for="status">Filter by Status:</label>
+            <select name="status" id="status" class="cmsmasters_filter_select">
+                <option value="">All</option>
+                <option value="approved" {% if request.GET.status == 'approved' %}selected{% endif %}>Approved</option>
+                <option value="declined" {% if request.GET.status == 'declined' %}selected{% endif %}>Declined</option>
+                <option value="disbursed" {% if request.GET.status == 'disbursed' %}selected{% endif %}>Disbursed</option>
+                <option value="pending" {% if request.GET.status == 'pending' %}selected{% endif %}>Pending Approval</option>
+            </select>
+        </form>
+        
+        <button id="download-csv" style="margin-top: 20px;margin-bottom: 10px; background-color: #2a3994; color: white; border: none; padding: 10px 20px;">Download CSV</button>
+        
+        <div id="loan-requests">
+            {% include 'home/loan_requests_list.html' %}
+        </div>
+        
+        <script>
+            $(document).ready(function () {
+                function fetchLoans(page = 1) {
+                    const status = $('#status').val();
+                    $.ajax({
+                        url: '?page=' + page + '&status=' + status,
+                        type: 'GET',
+                        success: function (data) {
+                            $('#loan-requests').html(data.html);
+                        }
+                    });
+                }
+        
+                $('#status').change(function () {
+                    fetchLoans();
+                });
+        
+                $(document).on('click', '#pagination a', function (e) {
+                    e.preventDefault();
+                    const page = $(this).attr('href').split('page=')[1];
+                    fetchLoans(page);
+                });
+        
+                $('#download-csv').click(function () {
+                    const status = $('#status').val();
+                    window.location.href = '?download_csv=1&status=' + status;
+                });
+            });
+        </script>
+    </div>
+</div>
+
+                                            <br>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cl"></div>
+            <div class="content_wrap fullwidth">
+                <div class="middle_content entry"></div>
+                <!-- Finish Content -->
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<!-- Loan Page Pagination -->
+<style>
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .pagination a {
+        text-decoration: none;
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 0 5px;
+        color: #333;
+        background-color: #f9f9f9;
+    }
+
+    .pagination a:hover {
+        background-color: #2a3994;
+        color: white;
+    }
+
+    .pagination .current {
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 0 5px;
+        background-color: #2a3994;
+        color: white;
+        cursor: default;
+    }
+
+    .pagination .disabled {
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 0 5px;
+        background-color: #e9ecef;
+        color: #6c757d;
+        cursor: not-allowed;
+    }
+</style>

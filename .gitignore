@@ -1,0 +1,27 @@
+venv/
+.venv/
+.vscode/
+.env
+*.env
+*.db.sqlite3
+*.db.sqlite
+payarena/db.sqlite3
+__pycache__/
+*.pyc
+.idea
+*.idea
+.idea/*
+*.log
+*.sqlite
+*.sqlite3
+.DS_Store
+*.DS_Store
+# Project image and file folders
+staticfiles/
+media/
+logs/
+images/*
+
+.push.py
+home/__pycache__/*
+loanapp/__pycache__/*

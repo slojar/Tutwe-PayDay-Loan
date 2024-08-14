@@ -1,0 +1,179 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from preview.colorlib.com/theme/bootstrap/contact-form-19/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 28 Jul 2024 10:39:08 GMT -->
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="{% static 'home/' %}loanform/fonts.googleapis.com/cssbd2a.css?family=Roboto:400,700,900&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'home/' %}loanform/fonts/icomoon/style.css">
+
+<link rel="stylesheet" href="{% static 'home/' %}loanform/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="{% static 'home/' %}loanform/css/style.css">
+<style>
+  /* Include the CSS code here */
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  .ftco-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url("https://www.techfunnel.com/wp-content/uploads/2021/07/benefits_of_business_loans.png") no-repeat center center;
+    background-size: cover;
+    opacity: 0.5;
+    z-index: -1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Adjust the logo size */
+  .logo-container img {
+    max-width: 100%;
+    height: auto;
+    width: 150px;
+    margin: 0 auto;
+  }
+
+  .logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .logo-container img {
+      width: 120px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .logo-container img {
+      width: 100px;
+    }
+  }
+</style>
+<title>Loan Request</title>
+</head>
+<body>
+  <section class="ftco-section"></section>
+
+<div class="content">
+<div class="container">
+<div class="row align-items-stretch no-gutters contact-wrap">
+<div class="col-md-12">
+     <!-- Logo -->
+     <div class="logo-container">
+      <img src="{% static 'home/wp-content/themes/cash-bay/theme-vars/theme-style/img/tutwe-logo.png' %}" alt="Tutwe Logo">
+    </div>
+<div class="form h-100">
+<h3>Get Started</h3>
+              <!-- Messages and Notices -->
+          {% if form.errors %} {% for field in form %} {% for err in field.errors %}
+          <div style="color: red; font-weight: bold; text-align: center">
+            {{err}}
+          </div>
+          {% endfor %} {% endfor %} {% endif %} {% if messages %} {% for msg in messages %} {% if msg.tags == 'success' %}
+          <div style="color: green; font-weight: bold; text-align: center">
+            {{msg}}
+          </div>
+          {% endif %} {% if msg.tags == 'error' %}
+          <div style="color: red; font-weight: bold; text-align: center">
+            {{msg}}
+          </div>
+          {% endif %} {% endfor %} {% endif %}
+          <!-- End Messages and Notices -->
+    <br>
+
+<form class="mb-5" method="POST" action="/loan-request">
+{% csrf_token %}
+<div class="row">
+<div class="col-md-6 form-group mb-3">
+<label for class="col-form-label">Full Name *</label>
+<input type="text" class="form-control" name="name" id="name" placeholder="Your name" value="{{ name }}">
+</div>
+<div class="col-md-6 form-group mb-3">
+<label for class="col-form-label">Email *</label>
+<input type="email" class="form-control" name="email" id="email" placeholder="Your email" value="{{ email }}">
+</div>
+</div>
+<div class="row">
+<div class="col-md-6 form-group mb-3">
+<label for class="col-form-label">EmployeeID *</label>
+<input type="text" class="form-control" name="employee_id" id="employee_id" placeholder="EmployeeID" value="{{ employee_id }}">
+</div>
+<div class="col-md-6 form-group mb-3">
+<label for class="col-form-label">Address *</label>
+<input type="text" class="form-control" name="address" id="address" placeholder="Enter your home address" value="{{ address }}">
+</div>
+</div>
+<div class="row">
+<div class="col-md-6 form-group mb-3">
+<label for class="col-form-label">Mobile Number *</label>
+<input type="text" class="form-control" name="phone" id="phone" placeholder="Enter your mobile number" value="{{ phone }}">
+</div>
+<div class="col-md-6 form-group mb-3">
+<label for class="col-form-label">Monthly Income *</label>
+<input type="number" class="form-control" name="income" id="income" placeholder="Enter your monthly NET salary" value="{{ income }}">
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-6 form-group mb-3">
+<label for="budget" class="col-form-label">Company *</label>
+<select class="custom-select" id="budget" name="budget">
+{#<option selected>Select your employer</option>#}
+{% for comp in company %}
+<option value={{ comp.id }}>{{ comp.name }}</option>
+{% endfor %}
+</select>
+</div>
+<div class="col-md-6 form-group mb-3">
+<label for="budget" class="col-form-label">Amount Needed *</label>
+<input type="number" class="form-control" name="needed" id="needed" placeholder="How much do you need?" value="{{ needed }}">
+</div>
+
+</div>
+<div class="row">
+<div class="col-md-12 form-group mb-3">
+<label for="message" class="col-form-label">Loan Purpose *</label>
+<textarea class="form-control" name="purpose" id="purpose" cols="30" rows="4" placeholder="Write a short message"></textarea>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 form-group">
+    <a href="{% url 'home:homepage' %}"><input style="cursor: pointer !important" value="Cancel" class="btn btn-primary rounded-0 py-2 px-4"></a>
+<button type="submit" name="submit" value="loan-request" class="btn btn-info rounded-0 py-2 px-4" style="background-color: #2a3994 !important;">Request Loan</button>
+<span class="submitting"></span>
+</div>
+</div>
+</form>
+<div id="form-message-warning mt-4"></div>
+<div id="form-message-success">
+Your request was sent successfully, thank you!
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="{% static 'home/' %}loanform/js/jquery-3.3.1.min.js"></script>
+<script src="{% static 'home/' %}loanform/js/popper.min.js"></script>
+<script src="{% static 'home/' %}loanform/js/bootstrap.min.js"></script>
+<script src="{% static 'home/' %}loanform/js/jquery.validate.min.js"></script>
+<script src="{% static 'home/' %}loanform/js/main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8aa43e5be87c0a70","version":"2024.7.0","serverTiming":{"name":{"cfL4":true}},"token":"cd0b4b3a733644fc843ef0b185f98241","b":1}' crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from preview.colorlib.com/theme/bootstrap/contact-form-19/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 28 Jul 2024 10:39:17 GMT -->
+</html>
