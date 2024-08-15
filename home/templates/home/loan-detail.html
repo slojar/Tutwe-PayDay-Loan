@@ -136,7 +136,7 @@
                             {% if not request.user.is_staff %}
                                 <option value="approved" {% if loan_request.loan_status == "approved" %}selected{% endif %}>Approved</option>
                                 <option value="declined" {% if loan_request.loan_status == "declined" %}selected{% endif %}>Declined</option>
-                                <option value="repaid" {% if loan_request.loan_status == "repaid" %}selected{% endif %}>Repaid</option>
+{#                                <option value="repaid" {% if loan_request.loan_status == "repaid" %}selected{% endif %}>Repaid</option>#}
                             {% else %}
                                 <option value="approved" {% if loan_request.loan_status == "approved" %}selected{% endif %}>Approved</option>
                                 <option value="declined" {% if loan_request.loan_status == "declined" %}selected{% endif %}>Declined</option>
