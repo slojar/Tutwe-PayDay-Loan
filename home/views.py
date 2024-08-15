@@ -1,4 +1,7 @@
+import datetime
+import http.client
 import time
+import csv
 
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -15,7 +18,6 @@ from django.urls import reverse
 from django.views.decorators.http import require_POST
 from django.core.paginator import Paginator
 from django.http import JsonResponse, HttpResponse
-import csv
 
 from home.forms import LoginForm, CompanyCreationForm, LoanRequestForm, UserAdditionForm
 from home.models import LoanRequest, UserProfile, Company
@@ -43,6 +45,7 @@ def clients_view(request):
     }
     return render(request, 'home/clients.html', context)
 
+
 def download_csv(queryset):
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="loan_requests.csv"'
@@ -63,6 +66,7 @@ def download_csv(queryset):
 
     return response
 
+
 def dashboard_view(request):
     if not request.user.is_authenticated:
         return redirect(reverse("home:homepage"))
@@ -70,7 +74,6 @@ def dashboard_view(request):
     status = request.GET.get('status')
 
     loan_requests = LoanRequest.objects.all().order_by("-created_on")
-    print(user.is_staff)
     if not user.is_staff:
         user_company_id = UserProfile.objects.get(user=user).company_id
         loan_requests = LoanRequest.objects.filter(company_id=user_company_id).order_by("-created_on")
@@ -110,15 +113,11 @@ def dashboard_view(request):
         "apperc": app_perc,
         "disperc": dis_perc,
         "penperc": pen_perc,
-        "decperc":dec_perc,
+        "decperc": dec_perc,
         "year": timezone.datetime.now().year,
-         'loan_status_choices': LoanRequest.LOAN_STATUS_CHOICES,
+        "loan_status_choices": LoanRequest.LOAN_STATUS_CHOICES,
          
     }
-        
-
-
-
 
     return render(request, 'home/loan-dashboard.html', context)
 
@@ -138,6 +137,7 @@ def change_loan_status(request, loan_id):
     loan_request.loan_status = request.POST.get('loan_status')
     loan_request.save()
     return redirect(reverse('home:loan-detail', args=[loan_id]))
+
 
 def login_view(request):
     form = LoginForm()
@@ -272,4 +272,11 @@ def new_user_view(request):
 def userlogout(request):
     logout(request)
     return redirect('/')
+
+
+def update_loan_due_date(request):
+    # This view will serve as a cron that gets all disbursed loan within and mark them as due on every 27th of the month
+    if datetime.datetime.now().today().date().day == 27:
+        LoanRequest.objects.filter(loan_status="disbursed").update(loan_status="due")
+    return HttpResponse("Cron Ran Successfully")
 

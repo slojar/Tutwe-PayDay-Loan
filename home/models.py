@@ -2,12 +2,6 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
-LOAN_STATUS_CHOICES = (
-    ("pending", "Awaiting Approval"), ("approved", "Approved"), ("disbursed", "Disbursed"), ("declined", "Declined"),
-    ("due", "Due For Repayment"), ("repayed", "Repayment Complete")
-)
-
-
 class Company(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=250, blank=True, null=True)
@@ -26,9 +20,10 @@ class Company(models.Model):
 
 class LoanRequest(models.Model):
     LOAN_STATUS_CHOICES = (
-    ("pending", "Awaiting Approval"), ("approved", "Approved"), ("disbursed", "Disbursed"), ("declined", "Declined"),
-    ("due", "Due For Repayment"), ("repayed", "Repayment Complete")
-)
+        ("pending", "Awaiting Approval"), ("approved", "Approved"), ("disbursed", "Disbursed"),
+        ("declined", "Declined"),
+        ("due", "Due For Repayment"), ("repaid", "Repayment Complete")
+    )
 
     full_name = models.CharField(max_length=300)
     email = models.EmailField(blank=True, null=True)
@@ -64,6 +59,3 @@ class UserProfile(models.Model):
 
     class Meta:
         db_table = "profile"
-
-
-

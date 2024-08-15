@@ -113,15 +113,15 @@
                     <div class="profile_details_item_title">Status:</div>
                     <div class="profile_details_item_desc">
                         {% if loan_request.loan_status == "pending" %}
-                        <span style="color: #00A8FF" class="cmsmasters_profile_category">{{ loan_request.get_loan_status_display }}</span>
+                        <span style="color: #00A8FF" class="cmsmasters_profile_category"><strong>{{ loan_request.get_loan_status_display|upper }}</strong></span>
                         {% elif loan_request.loan_status == "due" %}
-                        <span style="color: red" class="cmsmasters_profile_category">{{ loan_request.get_loan_status_display }}</span>
+                        <span style="color: red" class="cmsmasters_profile_category"><strong>{{ loan_request.get_loan_status_display|upper }}</strong></span>
                         {% else %}
-                        <span style="color: #00d084" class="cmsmasters_profile_category">{{ loan_request.get_loan_status_display }}</span>
+                        <span style="color: #00d084" class="cmsmasters_profile_category"><strong>{{ loan_request.get_loan_status_display|upper }}</strong></span>
                         {% endif %}
-                        {% if request.user.is_staff %}
+{#                        {% if request.user.is_staff %}#}
                         <button id="changeStatusBtn" class="btn btn-primary">Change Status</button>
-                        {%endif%}
+{#                        {%endif%}#}
                 </div>
 
                 {% if request.user.is_staff %}
@@ -133,9 +133,16 @@
                             {% csrf_token %}
                             <label for="loan_status">Loan Status:</label>
                             <select name="loan_status" id="loan_status">
+                            {% if not request.user.is_staff %}
                                 <option value="approved" {% if loan_request.loan_status == "approved" %}selected{% endif %}>Approved</option>
-                                <option value="repaid" {% if loan_request.loan_status == "repaid" %}selected{% endif %}>Repaid</option>
                                 <option value="declined" {% if loan_request.loan_status == "declined" %}selected{% endif %}>Declined</option>
+                                <option value="repaid" {% if loan_request.loan_status == "repaid" %}selected{% endif %}>Repaid</option>
+                            {% else %}
+                                <option value="approved" {% if loan_request.loan_status == "approved" %}selected{% endif %}>Approved</option>
+                                <option value="declined" {% if loan_request.loan_status == "declined" %}selected{% endif %}>Declined</option>
+                                <option value="repaid" {% if loan_request.loan_status == "repaid" %}selected{% endif %}>Repaid</option>
+                                <option value="disbursed" {% if loan_request.loan_status == "disbursed" %}selected{% endif %}>Disbursed</option>
+                            {% endif %}
                             </select>
                             <button type="submit">Submit</button>
                         </form>
