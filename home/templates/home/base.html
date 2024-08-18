@@ -2541,7 +2541,9 @@ var log_object = {"ajax_url":"https:\/\/cash-bay.cmsmasters.net\/wp-admin\/admin
             <nav>
                 <div class="menu-primary-navigation-container">
                     <ul id="navigation" class="mid_nav navigation">
+                        {% if not request.user.is_staff %}
                         <li id="menu-item-14374" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-7366 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-14374 menu-item-depth-0"><a href="{% url 'home:loan-request' %}"><span class="nav_item_wrap"><span class="nav_title">Request Loan</span></span></a>
+                        {% endif %}
 {#                        <li id="menu-item-14374" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-7366 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-14374 menu-item-depth-0"><a href="index.html"><span class="nav_item_wrap"><span class="nav_title">About Us</span></span></a>#}
                         <li id="menu-item-14374" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-7366 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-14374 menu-item-depth-0"><a href="{% url 'home:contact-us' %}"><span class="nav_item_wrap"><span class="nav_title">Contact Us</span></span></a>
 

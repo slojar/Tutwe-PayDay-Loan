@@ -19,7 +19,13 @@
             <td>{{ loan_request.requested_amount }}</td>
             <td>{{ loan_request.requested_amount|add:loan_request.interest_amount }}</td>
             <td>{{ loan_request.due_date|date }}</td>
+            {% if loan_request.loan_status == "due" or loan_request.loan_status == "declined" %}
+            <td style="color: red">{{ loan_request.get_loan_status_display }}</td>
+            {% elif loan_request.loan_status == "approved" or loan_request.loan_status == "disbursed"%}
+            <td style="color: green">{{ loan_request.get_loan_status_display }}</td>
+            {% else %}
             <td>{{ loan_request.get_loan_status_display }}</td>
+            {% endif %}
             <td>
                 <a href="{% url 'home:loan-detail' loan_request.id %}" style="background-color: #2a3994;"><button style="background-color: #2a3994;">VIEW</button></a>
             </td>

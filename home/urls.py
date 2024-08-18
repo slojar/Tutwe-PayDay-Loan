@@ -21,6 +21,7 @@ urlpatterns = [
     path('users', users_view, name='users'),
     path('loan-detail/<int:pk>', loan_detail_view, name='loan-detail'),
     path('loan/<int:loan_id>/change-status/', change_loan_status, name='change_loan_status'),
+    path('cron', update_loan_due_date, name='cron'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
